@@ -41,7 +41,7 @@ app.post('/message', (request, response) => {
     return response.send(twiml.toString());
   }
 
-  const twiml = twilio.twiml.MessagingResponse();
+  const twiml = new twilio.twiml.MessagingResponse();
   twiml.message(`*${userChoice}* ganha de *${botChoice}*`);
   twiml.message('Você ganhou :(... Quero revanche!');
 
