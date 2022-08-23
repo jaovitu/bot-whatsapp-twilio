@@ -27,6 +27,10 @@ app.post('/message', (request, response) => {
 
   const botChoice = options[ Math.floor( Math.random() * options.length ) ];
 
+  if (botChoice === userChoice.toLowerCase()) {
+    return response.send('<Response><Message>Ops! Parece que empatamos...</Message></Response>');
+  }
+
   const isUserWinner = wins[userChoice.toLowerCase()] === botChoice;
 
   if (!isUserWinner) {
