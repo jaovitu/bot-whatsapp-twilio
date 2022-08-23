@@ -21,7 +21,7 @@ const wins = {
 app.post('/message', (request, response) => {
   const { Body: userChoice } = request.body;
 
-  if ( !(options.includes(userChoice)) ) {
+  if ( !(options.includes(userChoice.toLowerCase())) ) {
     return response.send('<Response><Message>Escolha pedra, papel ou tesoura.</Message></Response>');
   }
 
